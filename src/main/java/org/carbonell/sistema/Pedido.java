@@ -26,6 +26,10 @@ public class Pedido {
         this.costo = costo;
     }
 
+    public Pedido() {
+
+    }
+
     // Getters y Setters
     public Integer getIdPedido() {
         return idPedido;

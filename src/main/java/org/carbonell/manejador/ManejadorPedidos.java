@@ -12,12 +12,24 @@ public class ManejadorPedidos {
         listaPedido=new ArrayList<>();
     }
 
+    public static ManejadorPedidos getInstance(){
+        return INSTANCIA;
+    }
+
     public void agregar(Pedido p){
         listaPedido.add(p);
     }
 
     public void eliminar(Pedido p){
         listaPedido.remove(p);
+    }
+
+    public void editar(Integer index, Pedido nuevoPedido){
+        if (index >= 0 && index < listaPedido.size()){
+            listaPedido.set(index, nuevoPedido);
+        } else {
+            throw new IndexOutOfBoundsException("Ese pedido no se encuentra en la lista");
+        }
     }
 
     public Pedido buscar(String nombre){
